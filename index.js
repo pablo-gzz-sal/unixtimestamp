@@ -31,9 +31,9 @@ app.get("/api/:date?", function(req, res) {
   const {date} = req.params
   const dateStamp = new Date(Number(date));
   const dateString = dateStamp.toUTCString()
-  if(isNaN(Number(date)) && date !== undefined) return res.json({error: "Invalid Date"});
-  if(date === undefined) return res.json({unix: now, utc: req.time.toUTCString()})
-  res.json({unix: Number(date), utc: dateString})
+  if(isNaN(Number(date)) && date !== undefined) return res.json({"error": "Invalid Date"});
+  if(date === undefined) return res.json({"unix": now, utc: req.time.toUTCString()})
+  res.json({"unix": Number(date), utc: dateString})
 })
 
 
