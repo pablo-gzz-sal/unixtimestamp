@@ -25,7 +25,7 @@ app.get("/api/hello", function (req, res) {
 });
 
 
-app.get("/api/:date?", function(req, res, err) {
+app.get("/api/:date?", function(req, res) {
   req.time = new Date()
   now = Math.floor(req.time.getTime())
   const {date} = req.params
